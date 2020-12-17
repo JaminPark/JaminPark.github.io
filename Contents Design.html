@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #282828;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        opacity: 0.8;
+        padding: 8px 12px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index:1000;
+      }
+      .nav_logo {
+        display: flex;
+        margin-left: 100px;
+      }
+      .nav_menu {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+      }
+      .nav_icons {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+
+      }
+      #facebook {
+        margin-top: 4px;
+      }
+      #aboutme {
+        margin: 0;
+      }
+      .nav_menu li {
+        padding: 8px 50px;
+      }
+      .nav_icons {
+        margin-right: 100px;
+        margin-left: 110px;
+        padding-left: 0;
+      }
+      .nav_icons li {
+        margin-left: 5px;
+      }
+      .spread-underline {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+      }
+      .spread-underline:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: white;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      .spread-underline:hover:after {
+        width: 100%;
+        left: 0;
+      }
+      nav > ul > li > a:hover {
+        text-shadow: 0px 0px 1px white;
+        transition: 0.5;
+      }
+      .contentd {
+        margin-top: 80px;
+        text-align: center;
+        background-color: black;
+      }
+      .contentd1 {
+        text-align: center;
+        background-color: black;
+      }
+      .nav_toogleBtn {
+        position: absolute;
+        right: 15px;
+        font-size: 24px;
+        display: none;
+      }
+      #main_1text1 {
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 17px;
+        margin-top: 45px;
+      }
+      #video {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+        height: 100%;
+      }
+      .main_2 {
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 4vmin;
+        margin-top: 25px;
+        margin-bottom: 100px;
+        color: #f0f4f5;
+        text-align: center;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: black;
+        opacity: 0.8;
+        margin-top: 20px;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .footer > img {
+        margin-bottom: 10px;
+      }
+      @media screen and (max-width: 900px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav_logo {
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0px;
+        }
+        .nav_menu {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        .nav_icons {
+          display: none;
+          justify-content: center;
+          width: 100%;
+          margin: 0px;
+        }
+        .nav_toogleBtn {
+          display: block;
+        }
+        .nav_menu.active,
+        .nav_icons.active {
+          display: flex;
+        }
+        .contentd,
+        .contentd1 {
+          width: 100%;
+        }
+      }
+    </style>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav_logo">
+        <a href="index.html"><img src="./img/logo.png" alt="" width="40">
+      </div>
+      <ul class="nav_menu">
+        <li id="aboutme"><a href="About Me.html" class="spread-underline">About Me</a></li>
+        <li><a href="Video Desgin.html" class="spread-underline">Video Desgin</a></li>
+        <li><a href="3D Design.html" class="spread-underline">3D Design</a></li>
+        <li><a href="#" class="spread-underline">Contents Design</a></li>
+        <li><a href="Contents Planning.html" class="spread-underline">Contents Planning</a></li>
+        <li><a href="Contents Programming.html" class="spread-underline">Contents Programming</a></li>
+      </ul>
+      <ul class="nav_icons">
+        <li><a href="https://www.facebook.com/profile.php?id=100015879339232"><img src="./img/facebook.png" alt="" width="30" id="facebook"></a></li>
+        <li><a href="https://www.instagram.com/jae_min.p/"><img src="./img/instagram.png" alt="" width="40"></a></li>
+      </ul>
+      <a href="#" class="nav_toogleBtn"><img src="./img/햄버거.png" alt="" width="15"></a>
+    </nav>
+    <div class="contentd">
+      <img src="./img1/콘디1.gif" alt="" width="15%">
+      <img src="./img1/콘디2.gif" alt="" width="15%">
+      <img src="./img1/콘디3.jpg" alt="" width="15%">
+      <img src="./img1/콘디4.jpg" alt="" width="15%">
+      <img src="./img1/콘디5.jpg" alt="" width="15%">
+    </div>
+    <div class="contentd1">
+      <img src="./img1/콘디6.gif" alt="" width="15%">
+      <img src="./img1/콘디7.jpg" alt="" width="15%">
+      <img src="./img1/콘디8.gif" alt="" width="15%">
+      <img src="./img1/콘디9.jpg" alt="" width="15%">
+      <img src="./img1/콘디10.jpg" alt="" width="15%">
+    </div>
+    <div class="main_2">
+      <p>직무수행능력평가 1 - CardNews 제작</p>
+      <p id="main_1text1">2학기 콘텐츠 디자인 중간 프로젝트는 카드뉴스 제작입니다.</p>
+      <p id="main_1text1">다양한 주제 중 하나를 선택하여 진행하는 걸로<br>
+      저는 초현실주의라는 카테고리를 선택하였습니다.<br><br>
+      초현실주의 거장인 살바도르 달리를 보여주고싶었습니다.<br>
+      어떤식으로 보여줄지 많은 고민을 하고 그가 남긴 명언들을 나열하는 카드뉴스를 제작하고자 하였습니다.<br>
+      간단하게 살바도르 달리의 인생을 보여주고 그 뒤로는 그의 명언들을 나열하였습니다.<br><br>
+      Adobe Illustrator 2020를 사용하여 제작하였고, 모션은 Adobe After Effects 2020을 사용하였습니다.</p>
+    </div>
+    <div class="main">
+      <div id="video">
+        <video width='50%' controls loop>
+          <source src="./img1/22061056_박재민_직무수행능력평가_SKT T1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="main_2">
+        <p>직무수행능력평가 1 - Digital Brochure 제작</p>
+        <p id="main_1text1">2학기 콘텐츠 디자인 기말 프로젝트인 디지털 브로셔 제작입니다.</p>
+        <p id="main_1text1">자유 주제 선정과정에서 SKT T1 프로게이머단을 선정하였으며<br>
+        SKT T1의 다양한 컨텐츠를 보여주고자 하였습니다.<br><br>
+        MAIN | ABOUT | MEMBER | NEWS | MADMOVIE | E-SPORTS 의 내용들을 담았고,<br>
+        자세한 시안과 자세한 스타일 가이드를 구성하고 구성한 것을 토대로 작업하였습니다.<br><br>
+        Adobe Illustrator 2020과 Adobe After Effects 2020를 연동하여 작업하였습니다.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="./img/logo.png" alt="" width="40">
+      <p>KAYWON UNIVERSITY</p>
+      <p>DIGITAL MEDIA DESGIN</p>
+      <p>COPYRIGHT (C) 22061056 PARKJAEMIN</p>
+    </div>
+  </body>
+</html>
