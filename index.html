@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #282828;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        opacity: 0.8;
+        padding: 8px 12px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index:1000;
+      }
+      .nav_logo {
+        display: flex;
+        margin-left: 100px;
+      }
+      .nav_menu {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+      }
+      .nav_icons {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+
+      }
+      #facebook {
+        margin-top: 4px;
+      }
+      #aboutme {
+        margin: 0;
+      }
+      .nav_menu li {
+        padding: 8px 50px;
+      }
+      .nav_icons {
+        margin-right: 100px;
+        margin-left: 110px;
+        padding-left: 0;
+      }
+      .nav_icons li {
+        margin-left: 5px;
+      }
+      .spread-underline {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+      }
+      .spread-underline:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: white;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      .spread-underline:hover:after {
+        width: 100%;
+        left: 0;
+      }
+      nav > ul > li > a:hover {
+        text-shadow: 0px 0px 1px white;
+        transition: 0.5;
+      }
+      .nav_toogleBtn {
+        position: absolute;
+        right: 15px;
+        font-size: 24px;
+        display: none;
+      }
+
+
+      #video {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+        height: 100%;
+      }
+      #video1 {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        height: 100%;
+      }
+      .main {
+        margin-top: 80px;
+      }
+      .main_2 {
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 5vmin;
+        margin-top: 15px;
+        color: #f0f4f5;
+        text-align: center;
+      }
+      .main_1 {
+        font-family: 'AppleSDGothicNeoEL00';
+        color: #f0f4f5;
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 40px;
+      }
+      .contentd2 {
+        margin-top: 30px;
+      }
+
+      .contentd {
+        float: left;
+        margin-left: 38px;
+      }
+      .contentdParent:after{
+        content:"";
+        display:table;
+        clear:both;
+      }
+      .contentp {
+        float: right;
+        margin-right: 38px;
+      }
+      .contentpParent:after{
+        content:"";
+        display:table;
+        clear:both;
+      }
+      .contentp2 {
+        margin-top: 10px;
+      }
+      .main_3 {
+        float: left;
+        margin-left: 20px;
+        padding-top: 5px;
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 5vmin;
+        margin-top: 15px;
+        color: #f0f4f5;
+      }
+      .main_4 {
+        float: right;
+        margin-right: 20px;
+        padding-top: 5px;
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 5vmin;
+        margin-top: 15px;
+        color: #f0f4f5;
+        text-align: right;
+      }
+      .main_5 {
+        <!-margin-top: 1100px;-->
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: black;
+        opacity: 0.8;
+        margin-top: 20px;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .footer > img {
+        margin-bottom: 10px;
+      }
+      @media screen and (max-width: 900px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav_logo {
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0px;
+        }
+        .nav_menu {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        .nav_icons {
+          display: none;
+          justify-content: center;
+          width: 100%;
+          margin: 0px;
+        }
+        .nav_toogleBtn {
+          display: block;
+        }
+        .nav_menu.active,
+        .nav_icons.active {
+          display: flex;
+        }
+        .main_3 {
+          float: left;
+
+          padding-top: 5px;
+          font-family: 'AppleSDGothicNeoEB00';
+          font-size: 5vmin;
+          margin-top: 15px;
+          color: #f0f4f5;
+          width:100%;
+        }
+        .main_3 > p {
+          text-align: center;
+        }
+        .contentd2 > img{
+          position:relative;
+          left:50%;
+          transform:translateX(-50%);
+        }
+        .contentd {
+          margin: 0;
+        }
+        .contentd2 > img:last-child{
+          margin-top:50px;
+        }
+        .contentp{
+          margin:0;
+        }
+        .main_4{
+          width:100%;
+          text-align:center;
+          margin:30px 0;
+          padding:10px 0;
+        }
+        .main_3{
+          width:100%;
+          text-align:center;
+          margin:30px 0;
+          padding:10px 0;
+        }
+      }
+    </style>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav_logo">
+        <a href="#"><img src="./img/logo.png" alt="" width="40">
+      </div>
+      <ul class="nav_menu">
+        <li id="aboutme"><a href="About Me.html" class="spread-underline">About Me</a></li>
+        <li><a href="Video Desgin.html" class="spread-underline">Video Desgin</a></li>
+        <li><a href="3D Design.html" class="spread-underline">3D Design</a></li>
+        <li><a href="Contents Design.html" class="spread-underline">Contents Design</a></li>
+        <li><a href="Contents Planning.html" class="spread-underline">Contents Planning</a></li>
+        <li><a href="Contents Programming.html" class="spread-underline">Contents Programming</a></li>
+      </ul>
+      <ul class="nav_icons">
+        <li><a href="https://www.facebook.com/profile.php?id=100015879339232"><img src="./img/facebook.png" alt="" width="30" id="facebook"></a></li>
+        <li><a href="https://www.instagram.com/jae_min.p/"><img src="./img/instagram.png" alt="" width="40"></a></li>
+      </ul>
+      <a href="#" class="nav_toogleBtn"><img src="./img/햄버거.png" alt="" width="15"></a>
+    </nav>
+    <div class="main">
+      <div id="video">
+        <img src="./img/video design.gif" alt="" width="50%">
+      </div>
+      <div class="main_2">
+        <p>모션그래픽을 통한 나만의 영상들.</p>
+      </div>
+      <div class="main_1">
+        <p><a href="Video Desgin.html"class="spread-underline"class="spread-underline">보러가기 ></a></p>
+      </div>
+    </div>
+    <div class="main">
+      <div id="video1">
+        <img src="./img/3d design.gif" alt="" width="50%">
+      </div>
+      <div class="main_2">
+        <p>3DS MAX를 통한 개성 넘치고 실제 같은 나의 모델링들.</p>
+      </div>
+      <div class="main_1">
+        <p><a href="3D Design.html"class="spread-underline">보러가기 ></a></p>
+      </div>
+    </div>
+    <div class="contentdParent">
+      <div class="contentd">
+        <div class="contentd2">
+          <img src="./img/content d1.jpg" alt="" style="max-width:100%; height:auto;">
+          <img src="./img/content d2.jpg" alt="" style="max-width:100%; height:auto;">
+        </div>
+      </div>
+      <div class="main_3">
+        <p>다양한 형식들의 디자인들을</br>보고싶을 땐 콘텐츠 디자인으로.</p>
+        <a href="Contents Design.html"class="spread-underline"><p>보러가기 ></p></a>
+      </div>
+    </div>
+    <div class="contentpParent">
+      <div class="contentp">
+        <div class="contentp2">
+          <img src="./img/content p2.png" alt="" style="max-width:100%; height:auto;">
+        </div>
+      </div>
+      <div class="main_4">
+        <p>모든 건 기획이 가장 중요한 법.</p>
+        <a href="Contents Planning.html"class="spread-underline"><p>보러가기 ></p></a>
+      </div>
+    </div>
+    <div class="main_5">
+      <div id="video">
+        <img src="./img/content pr.png" alt="" width="100%">
+      </div>
+    </div>
+    <div class="main_2">
+      <p>내손으로 직접 코딩하여 제작한 페이지들을 보고싶으면.</p>
+    </div>
+    <div class="main_1">
+      <p><a href="Contents Programming.html"class="spread-underline">보러가기 ></a></p>
+    </div>
+    <div class="footer">
+      <img src="./img/logo.png" alt="" width="40">
+      <p>KAYWON UNIVERSITY</p>
+      <p>DIGITAL MEDIA DESGIN</p>
+      <p>COPYRIGHT (C) 22061056 PARKJAEMIN</p>
+    </div>
+  </body>
+</html>
