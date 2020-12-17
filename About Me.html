@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #282828;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        opacity: 0.8;
+        padding: 8px 12px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index:1000;
+      }
+      .nav_logo {
+        display: flex;
+        margin-left: 100px;
+      }
+      .nav_menu {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+      }
+      .nav_icons {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+
+      }
+      #facebook {
+        margin-top: 4px;
+      }
+      #aboutme {
+        margin: 0;
+      }
+      .nav_menu li {
+        padding: 8px 50px;
+      }
+      .nav_icons {
+        margin-right: 100px;
+        margin-left: 110px;
+        padding-left: 0;
+      }
+      .nav_icons li {
+        margin-left: 5px;
+      }
+      .spread-underline {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+      }
+      .spread-underline:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: white;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      .spread-underline:hover:after {
+        width: 100%;
+        left: 0;
+      }
+      nav > ul > li > a:hover {
+        text-shadow: 0px 0px 1px white;
+        transition: 0.5;
+      }
+      .nav_toogleBtn {
+        position: absolute;
+        right: 15px;
+        font-size: 24px;
+        display: none;
+      }
+      .contentdParent:after{
+        content:"";
+        display:table;
+        clear:both;
+      }
+      .main_1 {
+        float: left;
+        margin-left: 38px;
+        margin-top: 80px;
+      }
+      .profile {
+        margin-top: 10px;
+        filter: drop-shadow(3px 3px 30px #000);
+      }
+      /* .main_1 {
+        margin-top: 80px;
+        margin-left: 38px;
+      } */
+      .main_1text1 {
+        float: left;
+        margin-left: 60px;
+        padding-top: 5px;
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 5vmin;
+        margin-top: 200px;
+        color: #f0f4f5;
+        border-top: 5px solid #f0f4f5;
+        border-width: 10%;
+      }
+      .main_1text2 {
+        float: right;
+        margin-right: 60px;
+        padding-top: 5px;
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 5vmin;
+        margin-top: 100px;
+        color: #f0f4f5;
+        border-top: 5px solid #f0f4f5;
+        border-width: 10%;
+        text-align: right;
+      }
+      #main_1text1 {
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 17px;
+        margin-top: 45px;
+      }
+      #main_1text2 {
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 17px;
+        margin-top: 45px;
+        text-align: right;
+      }
+      .contentp {
+        float: right;
+        margin-right: 38px;
+      }
+      .contentpParent:after{
+        content:"";
+        display:table;
+        clear:both;
+      }
+      .main_2 {
+        margin-top: 10px;
+        filter: drop-shadow(3px 3px 30px #000);
+      }
+      .main_4 {
+        float: right;
+        margin-right: 20px;
+        padding-top: 5px;
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 5vmin;
+        margin-top: 20px;
+        color: #f0f4f5;
+        text-align: right;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: black;
+        opacity: 0.8;
+        margin-top: 20px;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .footer > img {
+        margin-bottom: 10px;
+      }
+      @media screen and (max-width: 900px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav_logo {
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0px;
+        }
+        .nav_menu {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        .nav_icons {
+          display: none;
+          justify-content: center;
+          width: 100%;
+          margin: 0px;
+        }
+        .nav_toogleBtn {
+          display: block;
+        }
+        .nav_menu.active,
+        .nav_icons.active {
+          display: flex;
+        }
+        .main_1 {
+          margin: 0;
+          margin-top: 80px;
+        }
+        .main_1text1{
+          width:100%;
+          text-align:center;
+          margin:30px 0;
+          padding:10px 0;
+        }
+        .main_1text2{
+          width:100%;
+          text-align:center;
+          margin:30px 0;
+          padding:10px 0;
+        }
+        .profile > img{
+          position:relative;
+          left:50%;
+          transform:translateX(-50%);
+        }
+        .contentd2 > img{
+          position:relative;
+          left:50%;
+          transform:translateX(-50%);
+        }
+        .contentp {
+          margin: 0;
+        }
+        .main_2{
+          width:100%;
+          text-align:center;
+          margin:30px 0;
+          padding:10px 0;
+        }
+        #main_1text2 {
+          text-align: center;
+        }
+      }
+    </style>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav_logo">
+        <a href="index.html"><img src="./img/logo.png" alt="" width="40">
+      </div>
+      <ul class="nav_menu">
+        <li id="aboutme"><a href="#" class="spread-underline">About Me</a></li>
+        <li><a href="Video Desgin.html" class="spread-underline">Video Desgin</a></li>
+        <li><a href="3D Design.html" class="spread-underline">3D Design</a></li>
+        <li><a href="Contents Design.html" class="spread-underline">Contents Design</a></li>
+        <li><a href="Contents Planning.html" class="spread-underline">Contents Planning</a></li>
+        <li><a href="Contents Programming.html" class="spread-underline">Contents Programming</a></li>
+      </ul>
+      <ul class="nav_icons">
+        <li><a href="https://www.facebook.com/profile.php?id=100015879339232"><img src="./img/facebook.png" alt="" width="30" id="facebook"></a></li>
+        <li><a href="https://www.instagram.com/jae_min.p/"><img src="./img/instagram.png" alt="" width="40"></a></li>
+      </ul>
+      <a href="#" class="nav_toogleBtn"><img src="./img/햄버거.png" alt="" width="15"></a>
+    </nav>
+    <div class="contentdParent">
+      <div class="main_1">
+        <div class="profile">
+          <img src="./img1/profile.png" alt="" width="650" style="max-width:100%; height:auto;">
+        </div>
+      </div>
+      <div class="main_1text1">
+        <p>Hello, My name is Jaemin Park !</p>
+        <p id="main_1text1">안녕하세요. 박재민입니다.</p>
+        <p id="main_1text1">저는 현재 계원예술대학교 디지털미디어디자인과에 재학 중인 박재민입니다.<br>
+        저에 대해서 소개 해볼까해요.<br>
+        저는 2001.06.09일에 태어나 전주에서 학창시절을 보냈습니다.<br>
+        2019년 계원예술대학교 면접을 보고 합격하여 현재 서울에서 올라와 거주 중 입니다.<br><br>
+        저는 1학년때 기획,디자인,프로그래밍을 배우며 그 중 프로그래밍에 흥미가 생겨 2학년 세부전공에서 프로그래밍을 선택하였습니다.<br>
+        프로그래밍 전공으로 앞으로 웹퍼블리셔 프론트엔드 개발자가 되는 목표를 가지고<br>
+        열심히 노를 젓고있습니다.<br><br>
+        이번 웹사이트에서 보실 내용은 저의 1년간의 대학 생활 중<br>
+        2학기의 작업물들을 모아 놓은 포트폴리오 형식의 웹사이트입니다.<br>
+        열심히 작업한 결과물들이니 재밌게 보시고 가시길바랍니다.<br><br>
+        감사합니다.</p>
+      </div>
+    </div>
+    <div class="contentpParent">
+      <div class="contentp">
+        <div class="main_2">
+          <img src="./img/drowing.jpg" alt="" width="550" style="max-width:100%; height:auto;">
+        </div>
+      </div>
+      <div class="main_1text2">
+        <p>My lovely puppy ❤</p>
+        <p id="main_1text2">2020.08.30</p>
+        <p id="main_1text2">소묘로 우리집 강아지 꼬미를 그린 작품입니다.<br>
+        강아지는 2살이고 토이푸들입니다.<br><br>
+        귀엽죠?<br><br>
+        저는 이렇게 그림그리기를 어릴적부터 취미로 삼고있습니다.<br>
+        그 이유때문인지 평소에도 주변 사물이나 사람을 관찰하는 경향이 있습니다.<br>
+        더욱 더 다양한 그림들은 상단 메뉴에 인스타그램 로고를 클릭 하시면 저의 인스타그램 페이지로 이동하고<br>
+        많은 그림들을 구경하실 수 있습니다 :)</p>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="./img/logo.png" alt="" width="40">
+      <p>KAYWON UNIVERSITY</p>
+      <p>DIGITAL MEDIA DESGIN</p>
+      <p>COPYRIGHT (C) 22061056 PARKJAEMIN</p>
+    </div>
+  </body>
+</html>
