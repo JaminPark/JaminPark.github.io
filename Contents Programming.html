@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #282828;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        opacity: 0.8;
+        padding: 8px 12px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index:1000;
+      }
+      .nav_logo {
+        display: flex;
+        margin-left: 100px;
+      }
+      .nav_menu {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+      }
+      .nav_icons {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+
+      }
+      #facebook {
+        margin-top: 4px;
+      }
+      #aboutme {
+        margin: 0;
+      }
+      .nav_menu li {
+        padding: 8px 50px;
+      }
+      .nav_icons {
+        margin-right: 100px;
+        margin-left: 110px;
+        padding-left: 0;
+      }
+      .nav_icons li {
+        margin-left: 5px;
+      }
+      .spread-underline {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+      }
+      .spread-underline:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: white;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      .spread-underline:hover:after {
+        width: 100%;
+        left: 0;
+      }
+      nav > ul > li > a:hover {
+        text-shadow: 0px 0px 1px white;
+        transition: 0.5;
+      }
+      .nav_toogleBtn {
+        position: absolute;
+        right: 15px;
+        font-size: 24px;
+        display: none;
+      }
+      .main {
+        margin-top: 80px;
+      }
+      #video {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        height: 100%;
+      }
+      #main_1text1 {
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 17px;
+        margin-top: 45px;
+      }
+      .main_2 {
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 4vmin;
+        margin-top: 25px;
+        margin-bottom: 100px;
+        color: #f0f4f5;
+        text-align: center;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: black;
+        opacity: 0.8;
+        margin-top: 20px;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .footer > img {
+        margin-bottom: 10px;
+      }
+      @media screen and (max-width: 900px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav_logo {
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0px;
+        }
+        .nav_menu {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        .nav_icons {
+          display: none;
+          justify-content: center;
+          width: 100%;
+          margin: 0px;
+        }
+        .nav_toogleBtn {
+          display: block;
+        }
+        .nav_menu.active,
+        .nav_icons.active {
+          display: flex;
+        }
+      }
+    </style>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav_logo">
+        <a href="index.html"><img src="./img/logo.png" alt="" width="40">
+      </div>
+      <ul class="nav_menu">
+        <li id="aboutme"><a href="About Me.html" class="spread-underline">About Me</a></li>
+        <li><a href="#" class="spread-underline">Video Desgin</a></li>
+        <li><a href="3D Design.html" class="spread-underline">3D Design</a></li>
+        <li><a href="Contents Design.html" class="spread-underline">Contents Design</a></li>
+        <li><a href="Contents Planning.html" class="spread-underline">Contents Planning</a></li>
+        <li><a href="Contents Programming.html" class="spread-underline">Contents Programming</a></li>
+      </ul>
+      <ul class="nav_icons">
+        <li><a href="https://www.facebook.com/profile.php?id=100015879339232"><img src="./img/facebook.png" alt="" width="30" id="facebook"></a></li>
+        <li><a href="https://www.instagram.com/jae_min.p/"><img src="./img/instagram.png" alt="" width="40"></a></li>
+      </ul>
+      <a href="#" class="nav_toogleBtn"><img src="./img/햄버거.png" alt="" width="15"></a>
+    </nav>
+    <div class="main">
+      <div id="video">
+        <video width='50%' controls loop>
+          <source src="./img1/22061056_박재민_동영상 캡쳐본.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="main_2">
+        <p>직무수행능력평가 1 - 자유 주제페이지 제작</p>
+        <p id="main_1text1">2학기 콘텐츠 프로그래밍 중간 프로젝트인 자유 주제페이지입니다.</p>
+        <p id="main_1text1">주제 선정과정에서 저는 인생 영화 중 하나인<br>
+        위대한 쇼맨이라는 영화를 선정하였습니다.<br><br>
+        Main | Summary | Characters/Scenes | Review 페이지로 구성되어있으며<br>
+        영화의 분의기에 맞게 디자인하였습니다.<br><br>
+        Atom이라는 코딩 프로그램을 사용하였으며, HTML과 CSS로 작업하였습니다.</p>
+      </div>
+      <div class="main_2">
+        <p>직무수행능력평가 2 - PORTFOLIO페이지 제작</p>
+        <p id="main_1text1">2학기 콘텐츠 프로그래밍 기말 프로젝트는 자신의 포트폴리오페이지입니다.</p>
+        <p id="main_1text1">현재 보고계신 웹사이트이며<br>
+        1학년 2학기의 작업물을 넣어주었습니다.<br><br>
+        About Me | Video Desgin | 3D Design | Contents Design | Contents Planning | >Contents Programming 페이지로 구성되어있으며<br>
+        전체적으로 어둡게하여 작업물과 내용이 눈에 잘 띄게 설정해주었습니다.<br>
+        반응형 웹사이트를 제작하였고, 가로가 900px이하로 작아질시 자바스크립트를 사용하여 햄버거 메뉴로 바뀌도록 설정하였습니다.<br><br>
+        Atom이라는 코딩 프로그램을 사용하였으며, HTML과 CSS로 작업하였고, 자바스크립트 하나를 사용하여 Github에 올렸습니다.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="./img/logo.png" alt="" width="40">
+      <p>KAYWON UNIVERSITY</p>
+      <p>DIGITAL MEDIA DESGIN</p>
+      <p>COPYRIGHT (C) 22061056 PARKJAEMIN</p>
+    </div>
+  </body>
+</html>
