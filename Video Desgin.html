@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #282828;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        opacity: 0.8;
+        padding: 8px 12px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index:1000;
+      }
+      .nav_logo {
+        display: flex;
+        margin-left: 100px;
+      }
+      .nav_menu {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+      }
+      .nav_icons {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+
+      }
+      #facebook {
+        margin-top: 4px;
+      }
+      #aboutme {
+        margin: 0;
+      }
+      .nav_menu li {
+        padding: 8px 50px;
+      }
+      .nav_icons {
+        margin-right: 100px;
+        margin-left: 110px;
+        padding-left: 0;
+      }
+      .nav_icons li {
+        margin-left: 5px;
+      }
+      .spread-underline {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+      }
+      .spread-underline:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: white;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      .spread-underline:hover:after {
+        width: 100%;
+        left: 0;
+      }
+      nav > ul > li > a:hover {
+        text-shadow: 0px 0px 1px white;
+        transition: 0.5;
+      }
+      .nav_toogleBtn {
+        position: absolute;
+        right: 15px;
+        font-size: 24px;
+        display: none;
+      }
+      .main {
+        margin-top: 80px;
+      }
+      #video {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+        height: 100%;
+      }
+      #video1 {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FF0078;
+        height: 100%;
+      }
+      #main_1text1 {
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 17px;
+        margin-top: 45px;
+      }
+      .main_2 {
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 4vmin;
+        margin-top: 25px;
+        margin-bottom: 100px;
+        color: #f0f4f5;
+        text-align: center;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: black;
+        opacity: 0.8;
+        margin-top: 20px;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .footer > img {
+        margin-bottom: 10px;
+      }
+      @media screen and (max-width: 900px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav_logo {
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0px;
+        }
+        .nav_menu {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        .nav_icons {
+          display: none;
+          justify-content: center;
+          width: 100%;
+          margin: 0px;
+        }
+        .nav_toogleBtn {
+          display: block;
+        }
+        .nav_menu.active,
+        .nav_icons.active {
+          display: flex;
+        }
+      }
+    </style>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav_logo">
+        <a href="index.html"><img src="./img/logo.png" alt="" width="40">
+      </div>
+      <ul class="nav_menu">
+        <li id="aboutme"><a href="About Me.html" class="spread-underline">About Me</a></li>
+        <li><a href="#" class="spread-underline">Video Desgin</a></li>
+        <li><a href="3D Design.html" class="spread-underline">3D Design</a></li>
+        <li><a href="Contents Design.html" class="spread-underline">Contents Design</a></li>
+        <li><a href="Contents Planning.html" class="spread-underline">Contents Planning</a></li>
+        <li><a href="Contents Programming.html" class="spread-underline">Contents Programming</a></li>
+      </ul>
+      <ul class="nav_icons">
+        <li><a href="https://www.facebook.com/profile.php?id=100015879339232"><img src="./img/facebook.png" alt="" width="30" id="facebook"></a></li>
+        <li><a href="https://www.instagram.com/jae_min.p/"><img src="./img/instagram.png" alt="" width="40"></a></li>
+      </ul>
+      <a href="#" class="nav_toogleBtn"><img src="./img/햄버거.png" alt="" width="15"></a>
+    </nav>
+    <div class="main">
+      <div id="video">
+        <video width='50%' controls loop>
+          <source src="./img1/22061056_직무수행능력평가1_박재민.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="main_2">
+        <p>직무수행능력평가 1 - 나이키 모션그래픽 애니메이션</p>
+        <p id="main_1text1">2학기 영상디자인 중간 프로젝트인 모션그래픽 애니메이션입니다.</p>
+        <p id="main_1text1">브랜드 선정과정에서 나이키를 선정하였으며<br>
+        나이키에 '나이키는 당신의 꿈을 응원합니다.'라는 슬로건을 부여하고, 그에 맞게 제작하였습니다.<br><br>
+        육상선수의 꿈을 가진 어린 소년이 경기를 보다가 TV속으로 빨려들어갑니다.<br>
+        나이키 신발 더미에 떨어지고, 그 신발을 신고 육상 선수가 되는 스토리입니다.<br><br>
+        Adobe Illustrator 2020과 Adobe After Effects 2020를 연동하여 작업하였습니다.</p>
+      </div>
+      <div id="video1">
+        <video width='50%' controls loop>
+          <source src="./img/22061056_직무수행능력평가2_박재민.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="main_2">
+        <p>직무수행능력평가 2 - 야놀자 브랜드 광고영상</p>
+        <p id="main_1text1">2학기 영상디자인 기말 프로젝트인 모션그래픽 광고영상입니다.</p>
+        <p id="main_1text1">기말 프로젝트는 야놀자라는 브랜드를 홍보하고자하여 선정하였습니다.<br>
+        야놀자로 파티룸을 예약하여 노는 모습( 영화감상, 노래, 보드게임, 당구 ) 과 함께 야놀자의 기능 소개하는 컨셉을 잡고 진행하였습니다.<br><br>
+        놀러갈 곳을 찾던 주인공이 야놀자 어플을 보다가 파티룸을 클릭하는<br>
+        순간 파티룸으로 변하며 친구들과 노는 꿈을 꾸었습니다.<br>
+        꿈에서 깨고 일어나 야놀자 어플을 통해 파티룸을 예약하는 장면과 프로모션을 보여는 스토리입니다.<br><br>
+        영상 촬영을 한 뒤 Adobe Illustrator 2020과 Adobe After Effects 2020를 연동하여 작업하였습니다.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="./img/logo.png" alt="" width="40">
+      <p>KAYWON UNIVERSITY</p>
+      <p>DIGITAL MEDIA DESGIN</p>
+      <p>COPYRIGHT (C) 22061056 PARKJAEMIN</p>
+    </div>
+  </body>
+</html>
