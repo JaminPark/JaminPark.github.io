@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #282828;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        opacity: 0.8;
+        padding: 8px 12px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index:1000;
+      }
+      .nav_logo {
+        display: flex;
+        margin-left: 100px;
+      }
+      .nav_menu {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+      }
+      .nav_icons {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+
+      }
+      #facebook {
+        margin-top: 4px;
+      }
+      #aboutme {
+        margin: 0;
+      }
+      .nav_menu li {
+        padding: 8px 50px;
+      }
+      .nav_icons {
+        margin-right: 100px;
+        margin-left: 110px;
+        padding-left: 0;
+      }
+      .nav_icons li {
+        margin-left: 5px;
+      }
+      .spread-underline {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+      }
+      .spread-underline:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: white;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      .spread-underline:hover:after {
+        width: 100%;
+        left: 0;
+      }
+      nav > ul > li > a:hover {
+        text-shadow: 0px 0px 1px white;
+        transition: 0.5;
+      }
+      .nav_toogleBtn {
+        position: absolute;
+        right: 15px;
+        font-size: 24px;
+        display: none;
+      }
+      .contentdParent:after{
+        content:"";
+        display:table;
+        clear:both;
+      }
+      .main_1 {
+        float: left;
+        margin-left: 38px;
+        margin-top: 80px;
+      }
+      .profile {
+        margin-top: 10px;
+        filter: drop-shadow(3px 3px 30px #000);
+      }
+      /* .main_1 {
+        margin-top: 80px;
+        margin-left: 38px;
+      } */
+      .main_1text1 {
+        float: left;
+        margin-left: 60px;
+        padding-top: 5px;
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 5vmin;
+        margin-top: 200px;
+        color: #f0f4f5;
+
+      }
+      #main_1text1 {
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 17px;
+        margin-top: 45px;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: black;
+        opacity: 0.8;
+        margin-top: 20px;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .main {
+        margin-top: 80px;
+      }
+      #video {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        height: 100%;
+      }
+      .main_2 {
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 4vmin;
+        margin-top: 25px;
+        margin-bottom: 100px;
+        color: #f0f4f5;
+        text-align: center;
+      }
+      .footer > img {
+        margin-bottom: 10px;
+      }
+      @media screen and (max-width: 900px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav_logo {
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0px;
+        }
+        .nav_menu {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        .nav_icons {
+          display: none;
+          justify-content: center;
+          width: 100%;
+          margin: 0px;
+        }
+        .nav_toogleBtn {
+          display: block;
+        }
+        .nav_menu.active,
+        .nav_icons.active {
+          display: flex;
+        }
+        .main_1 {
+          margin: 0;
+          margin-top: 80px;
+        }
+        .main_1text1{
+          width:100%;
+          text-align:center;
+          margin:30px 0;
+          padding:10px 0;
+        }
+        .profile > img{
+          position:relative;
+          left:50%;
+          transform:translateX(-50%);
+        }
+      }
+    </style>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav_logo">
+        <a href="index.html"><img src="./img/logo.png" alt="" width="40">
+      </div>
+      <ul class="nav_menu">
+        <li id="aboutme"><a href="About Me.html" class="spread-underline">About Me</a></li>
+        <li><a href="Video Desgin.html" class="spread-underline">Video Desgin</a></li>
+        <li><a href="#" class="spread-underline">3D Design</a></li>
+        <li><a href="Contents Design.html" class="spread-underline">Contents Design</a></li>
+        <li><a href="Contents Planning.html" class="spread-underline">Contents Planning</a></li>
+        <li><a href="Contents Programming.html" class="spread-underline">Contents Programming</a></li>
+      </ul>
+      <ul class="nav_icons">
+        <li><a href="https://www.facebook.com/profile.php?id=100015879339232"><img src="./img/facebook.png" alt="" width="30" id="facebook"></a></li>
+        <li><a href="https://www.instagram.com/jae_min.p/"><img src="./img/instagram.png" alt="" width="40"></a></li>
+      </ul>
+      <a href="#" class="nav_toogleBtn"><img src="./img/햄버거.png" alt="" width="15"></a>
+    </nav>
+    <div class="contentdParent">
+      <div class="main_1">
+        <div class="profile">
+          <img src="./img/직무수행능력평가1_22061056_박재민.jpg" alt="" width="650" style="max-width:100%; height:auto;">
+        </div>
+      </div>
+      <div class="main_1text1">
+        <p>직무수행능력평가 1 - 3DS MAX 포스터 디자인</p>
+        <p id="main_1text1">2학기 3D 디자인 중간 프로젝트인 포스터 제작입니다.</p>
+        <p id="main_1text1">총 7개의 오브젝트를 선정하여 모델링하고 구성하는 방식으로,<br>
+        저는 제가 닮고싶은면을 가지고있는 7개의 오브젝트(턴테이블, 곰인형, 스피커, 마이크, 조명, 카드, 의자)를 선정하였습니다.<br><br>
+        턴테이블의 부드럽고 분위기있는 면,<br>
+        곰인형의 폭신하고 부드러운 면,<br>
+        스피커의 돋보이게 해주는 면,<br>
+        마이크의 소리를 크게 낼 수 있는 면,<br>
+        조명의 밝게 비추는 면,<br>
+        카드의 신비로운 면,<br>
+        의자의 하나의 휴식공간같은 면을 잡아주었습니다.<br><br>
+        퀄리티 높은 모델링과 V-RAY를 통해 실물과 유사한 느낌을 내주었습니다.</p>
+      </div>
+    </div>
+    <div class="main">
+      <div id="video">
+        <video width='50%' controls loop>
+          <source src="./img1/B_22061056_박재민_직무수행평가2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="main_2">
+        <p>직무수행능력평가 2 - 3DS MAX 애니메이션 디자인</p>
+        <p id="main_1text1">2학기 3D 디자인 기말 프로젝트인 애니메이션 제작입니다.</p>
+        <p id="main_1text1">아이템 선정과정에서 베어브릭을 선정하였으며<br>
+          베어브릭의 커스터마이징과 다양한 사이즈를 중점으로 홍보하는 애니메이션 제작하였습니다.<br><br>
+        제품을 모델링하고 스토리보드에 맞게 영상을 제작하였습니다.<br><br>
+        3DS MAX에서 인코딩을 하여 Adobe After Effects 2020를 연동하여 작업하였습니다.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="./img/logo.png" alt="" width="40">
+      <p>KAYWON UNIVERSITY</p>
+      <p>DIGITAL MEDIA DESGIN</p>
+      <p>COPYRIGHT (C) 22061056 PARKJAEMIN</p>
+    </div>
+  </body>
+</html>
