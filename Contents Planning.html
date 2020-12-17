@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #282828;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        opacity: 0.8;
+        padding: 8px 12px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index:1000;
+      }
+      .nav_logo {
+        display: flex;
+        margin-left: 100px;
+      }
+      .nav_menu {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+      }
+      .nav_icons {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+
+      }
+      #facebook {
+        margin-top: 4px;
+      }
+      #aboutme {
+        margin: 0;
+      }
+      .nav_menu li {
+        padding: 8px 50px;
+      }
+      .nav_icons {
+        margin-right: 100px;
+        margin-left: 110px;
+        padding-left: 0;
+      }
+      .nav_icons li {
+        margin-left: 5px;
+      }
+      .spread-underline {
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+      }
+      .spread-underline:after {
+        background: none repeat scroll 0 0 transparent;
+        bottom: 0;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: white;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+      }
+      .spread-underline:hover:after {
+        width: 100%;
+        left: 0;
+      }
+      nav > ul > li > a:hover {
+        text-shadow: 0px 0px 1px white;
+        transition: 0.5;
+      }
+      .nav_toogleBtn {
+        position: absolute;
+        right: 15px;
+        font-size: 24px;
+        display: none;
+      }
+      .contentdParent:after{
+        content:"";
+        display:table;
+        clear:both;
+      }
+      .main_1 {
+        float: left;
+        margin-left: 38px;
+        margin-top: 80px;
+      }
+      .profile {
+        margin-top: 10px;
+        filter: drop-shadow(3px 3px 30px #000);
+      }
+      /* .main_1 {
+        margin-top: 80px;
+        margin-left: 38px;
+      } */
+      .main_1text1 {
+        float: left;
+        margin-left: 60px;
+        padding-top: 5px;
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 5vmin;
+        margin-top: 80px;
+        color: #f0f4f5;
+
+      }
+      .main_1text2 {
+        float: right;
+        margin-right: 60px;
+        padding-top: 5px;
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 5vmin;
+        margin-top: 0px;
+        color: #f0f4f5;
+        text-align: right;
+      }
+      #main_1text1 {
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 17px;
+        margin-top: 45px;
+      }
+      #main_1text2 {
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 17px;
+        margin-top: 45px;
+        text-align: right;
+      }
+      .contentp {
+        float: right;
+        margin-right: 38px;
+      }
+      .contentpParent:after{
+        content:"";
+        display:table;
+        clear:both;
+      }
+      .main_2 {
+        margin-top: 10px;
+        filter: drop-shadow(3px 3px 30px #000);
+      }
+      .main_4 {
+        float: right;
+        margin-right: 20px;
+        padding-top: 5px;
+        font-family: 'AppleSDGothicNeoEB00';
+        font-size: 5vmin;
+        margin-top: 20px;
+        color: #f0f4f5;
+        text-align: right;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: black;
+        opacity: 0.8;
+        margin-top: 20px;
+        color: white;
+        font-family: 'AppleSDGothicNeoL00';
+        font-size: 14px;
+      }
+      .footer > img {
+        margin-bottom: 10px;
+      }
+      @media screen and (max-width: 900px) {
+        .navbar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav_logo {
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0px;
+        }
+        .nav_menu {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
+        .nav_icons {
+          display: none;
+          justify-content: center;
+          width: 100%;
+          margin: 0px;
+        }
+        .nav_toogleBtn {
+          display: block;
+        }
+        .nav_menu.active,
+        .nav_icons.active {
+          display: flex;
+        }
+        .main_1 {
+          margin: 0;
+          margin-top: 80px;
+        }
+        .main_1text1{
+          width:100%;
+          text-align:center;
+          margin:30px 0;
+          padding:10px 0;
+        }
+        .main_1text2{
+          width:100%;
+          text-align:center;
+          margin:30px 0;
+          padding:10px 0;
+        }
+        .profile > img{
+          position:relative;
+          left:50%;
+          transform:translateX(-50%);
+        }
+        .contentd2 > img{
+          position:relative;
+          left:50%;
+          transform:translateX(-50%);
+        }
+        .contentp {
+          margin: 0;
+        }
+        .main_2{
+          width:100%;
+          text-align:center;
+          margin:30px 0;
+          padding:10px 0;
+        }
+        #main_1text2 {
+          text-align: center;
+        }
+      }
+    </style>
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav_logo">
+        <a href="index.html"><img src="./img/logo.png" alt="" width="40">
+      </div>
+      <ul class="nav_menu">
+        <li id="aboutme"><a href="About Me.html" class="spread-underline">About Me</a></li>
+        <li><a href="Video Desgin.html" class="spread-underline">Video Desgin</a></li>
+        <li><a href="3D Design.html" class="spread-underline">3D Design</a></li>
+        <li><a href="Contents Design.html" class="spread-underline">Contents Design</a></li>
+        <li><a href="#" class="spread-underline">Contents Planning</a></li>
+        <li><a href="Contents Programming.html" class="spread-underline">Contents Programming</a></li>
+      </ul>
+      <ul class="nav_icons">
+        <li><a href="https://www.facebook.com/profile.php?id=100015879339232"><img src="./img/facebook.png" alt="" width="30" id="facebook"></a></li>
+        <li><a href="https://www.instagram.com/jae_min.p/"><img src="./img/instagram.png" alt="" width="40"></a></li>
+      </ul>
+      <a href="#" class="nav_toogleBtn"><img src="./img/햄버거.png" alt="" width="15"></a>
+    </nav>
+    <div class="contentdParent">
+      <div class="main_1">
+        <div class="profile">
+          <img src="./img/content p1.png" alt="" width="650" style="max-width:100%; height:auto;">
+        </div>
+      </div>
+      <div class="main_1text1">
+        <p>직무수행능력평가 1 - PC WepSite Renewal</p>
+        <p id="main_1text1">2학기 콘텐츠 기획 중간 프로젝트인 PC 웹 사이트 리뉴얼입니다.</p>
+        <p id="main_1text1">팀플로 진행하였고, 저희는 애플 웹사이트를 리뉴얼 해보고자 하였습니다.<br>
+        기획 및 분석, 리서치, 정보구조, 스토리 보드 순으로 진행하였습니다.<br><br>
+        기획 및 분석 단계에서는 프로젝트 브리프 등등 자사를 파악하는 시간을 가졌습니다.<br>
+        리서치 단계에서는 타사와 자사를 비교해보고,</p>
+      </div>
+    </div>
+    <div class="contentpParent">
+      <div class="contentp">
+        <div class="main_2">
+          <img src="./img1/기획2.png" alt="" width="650" style="max-width:100%; height:auto;">
+        </div>
+      </div>
+      <div class="main_1text2">
+        <p id="main_1text2">정보구조 단계서는 내비게이션 시스템 검토 등 웹사이트를 파악하였습니다.<br>
+        마지막으로 스토리 보드에서는 웹사이트를 리뉴얼했을때의 모습을 구성시켜보았습니다.</p>
+      </div>
+    </div>
+    <div class="contentdParent">
+      <div class="main_1">
+        <div class="profile">
+          <img src="./img/content p2.png" alt="" width="650" style="max-width:100%; height:auto;">
+        </div>
+      </div>
+      <div class="main_1text1">
+        <p>직무수행능력평가 2 - PC/SmartPhone WepSite Renewal</p>
+        <p id="main_1text1">2학기 콘텐츠 기획 기말 프로젝트인 PC/SmartPhone 웹 사이트 리뉴얼입니다.</p>
+        <p id="main_1text1">저는 리그오브레전드 게임 웹사이트를 리뉴얼 해보고자하였습니다.<br>
+        전반적인 과정은 중간 프로젝트와 동일합니다.<br>
+        개요, 정보수집, 분석, 전략 수립, 정보구조, 스토리보드 순으로 진행하였습니다.<br><br>
+        개요에서 서비스 선정과 프로젝트 브리프시간을 가졌고,<br>
+        정보수집을 한 뒤 다양한 분석을 진행하였으며,</p>
+      </div>
+    </div>
+    <div class="contentpParent">
+      <div class="contentp">
+        <div class="main_2">
+          <img src="./img1/기획.png" alt="" width="650" style="max-width:100%; height:auto;">
+        </div>
+      </div>
+      <div class="main_1text2">
+        <p id="main_1text2">전략 수립 과정에서는 포지셔닝 맵이나 설문조사로 자사의 상황과 다양한 의견을 들어보았습니다.<br>
+        정보구조유형에서는 카드소팅, 레이블링 등등의 작업을 걸치고,<br>
+        마지막 단계인 스토리보드에서 PC와 SmartPhone화면설계도를 구성시켜주었습니다.</p>
+      </div>
+    </div>
+    <div class="footer">
+      <img src="./img/logo.png" alt="" width="40">
+      <p>KAYWON UNIVERSITY</p>
+      <p>DIGITAL MEDIA DESGIN</p>
+      <p>COPYRIGHT (C) 22061056 PARKJAEMIN</p>
+    </div>
+  </body>
+</html>
